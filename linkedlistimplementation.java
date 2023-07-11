@@ -35,4 +35,23 @@ public class linkedlistimplementation {
         n.next = this.head;
         this.head = n;
     }
+    public void addAtMiddle(String i,int pos)
+	{
+		Node node=new Node();
+		Node current=this.head;
+		if(this.head!=null && pos<=this.size)
+		{
+			for(int j=0;j<pos;j++) {
+				current=current.next;
+			}
+			node.item=i;
+			node.next=current.next;
+			current.next=node;
+			this.size+=1;
+		}
+		else
+		{
+			System.out.println("position is greater than size");
+		}
+	}
 }
