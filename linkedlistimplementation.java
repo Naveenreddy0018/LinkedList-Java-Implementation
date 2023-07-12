@@ -35,8 +35,27 @@ public class linkedlistimplementation {
         n.next = this.head;
         this.head = n;
     }
-    public void addAtMiddle(String i,int pos)
-	{
+
+    public void find(int value) {
+        Node current = this.head;
+        boolean flag = false;
+        for(int i = 0; i < size; i++) {
+            if (current.item.equals(value)) {
+                System.out.println("Element present at index " + i);
+                flag = true;
+                // break;
+            }
+            
+            current = current.next;
+
+        }
+        if (!flag) {
+            System.out.println("Element not present in Linked List");
+        }
+
+    }
+	
+    public void addAtMiddle(String i,int pos) {
 		Node node=new Node();
 		Node current=this.head;
 		if(this.head!=null && pos<=this.size)
@@ -53,5 +72,6 @@ public class linkedlistimplementation {
 		{
 			System.out.println("position is greater than size");
 		}
-	}
+    }
+	
 }
